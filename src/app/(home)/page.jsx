@@ -1,13 +1,13 @@
-import Navbar from "@/components/wama/Navbar";
-import Hero from "@/components/wama/Hero";
-import Clients from "@/components/wama/Clients";
-import Projects from "@/components/wama/Projects";
-import Services from "@/components/wama/Services";
-import MetricsAndFounder from "@/components/wama/MetricsAndFounder";
-import FAQ from "@/components/wama/FAQ";
-import Blog from "@/components/wama/Blog";
-import Contact from "@/components/wama/Contact";
-import Footer from "@/components/wama/Footer";
+import Navbar from "./_components/Navbar";
+import Hero from "./_components/Hero";
+import Clients from "./_components/Clients";
+import Projects from "./_components/Projects";
+import Services from "./_components/Services";
+import MetricsAndFounder from "./_components/MetricsAndFounder";
+import FAQ from "./_components/FAQ";
+import Blog from "./_components/Blog";
+import Contact from "./_components/Contact";
+import Footer from "./_components/Footer";
 
 export default function Home() {
   const jsonLd = {
@@ -15,17 +15,17 @@ export default function Home() {
     "@graph": [
       {
         "@type": "WebPage",
-        "@id": "https://wama.com.br/#webpage",
-        "url": "https://wama.com.br",
-        "name": "Wama | Agência de Design, Sites, SaaS e Aplicativos",
-        "about": { "@id": "https://wama.com.br/#organization" },
+        "@id": "https://mithunweb.vercel.app/#webpage",
+        "url": "https://mithunweb.vercel.app",
+        "name": "Mithun Web | Design de Excelência, Sites, SaaS e Aplicativos",
+        "about": { "@id": "https://mithunweb.vercel.app/#organization" },
         "inLanguage": "pt-BR"
       },
       {
         "@type": "Organization",
-        "@id": "https://wama.com.br/#organization",
-        "name": "Wama",
-        "url": "https://wama.com.br",
+        "@id": "https://mithunweb.vercel.app/#organization",
+        "name": "Mithun Web",
+        "url": "https://mithunweb.vercel.app",
         "logo": "https://framerusercontent.com/images/hxiEcAniRHQ0i8LJkuyQQyJc.png",
         "description": "Sites em Framer, SaaS, sistemas e aplicativos personalizados."
       }

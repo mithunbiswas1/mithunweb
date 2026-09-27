@@ -15,12 +15,12 @@ const fragmentMono = Fragment_Mono({
 });
 
 export const metadata = {
-  title: "Wama | Agência de Design, Sites, SaaS e Aplicativos",
+  title: "Mithun Web | Agência de Design, Sites, SaaS e Aplicativos",
   description:
     "Sites em Framer, SaaS, sistemas e aplicativos personalizados para empresas que buscam design de excelência, tecnologia e experiências digitais que geram valor na era da IA.",
-  metadataBase: new URL("https://wama.com.br"),
+  metadataBase: new URL("https://mithunweb.vercel.app"),
   alternates: {
-    canonical: "https://wama.com.br/",
+    canonical: "https://mithunweb.vercel.app/",
   },
   icons: {
     icon: [
@@ -37,8 +37,8 @@ export const metadata = {
   },
   openGraph: {
     type: "website",
-    url: "https://wama.com.br/",
-    title: "Wama | Agência de Design, Sites, SaaS e Aplicativos",
+    url: "https://mithunweb.vercel.app/",
+    title: "Mithun Web | Agência de Design, Sites, SaaS e Aplicativos",
     description:
       "Sites em Framer, SaaS, sistemas e aplicativos personalizados para empresas que buscam design de excelência, tecnologia e experiências digitais que geram valor na era da IA.",
     images: [
@@ -46,13 +46,13 @@ export const metadata = {
         url: "https://framerusercontent.com/images/hxiEcAniRHQ0i8LJkuyQQyJc.png",
         width: 1200,
         height: 630,
-        alt: "Wama - Agência de Design e Tecnologia",
+        alt: "Mithun Web - Agência de Design e Tecnologia",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Wama | Agência de Design, Sites, SaaS e Aplicativos",
+    title: "Mithun Web | Agência de Design, Sites, SaaS e Aplicativos",
     description:
       "Sites em Framer, SaaS, sistemas e aplicativos personalizados para empresas que buscam design de excelência, tecnologia e experiências digitais que geram valor na era da IA.",
     images: ["https://framerusercontent.com/images/hxiEcAniRHQ0i8LJkuyQQyJc.png"],

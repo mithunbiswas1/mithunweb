@@ -533,7 +533,7 @@ export const METRICS = [
 export const FOUNDER = {
   quote: "Para ter um projeto disruptivo é fundamental ter um design que rompe a barreira do comum e isso nós garantimos.",
   name: "Henrique Sabino",
-  role: "Founder Wama",
+  role: "Founder Mithun Web",
   photo: "https://framerusercontent.com/images/5KmJL4BaxcMrUFM3FUWLMKMZyU.png",
   background: "https://framerusercontent.com/images/TabzOE2mQoIS80gGZrBQFTWK28.jpg"
 };
@@ -544,7 +544,7 @@ export const FAQS = [
     answer: "O prazo é definido depois que entendemos o tamanho do projeto, o que precisa ser criado e quais etapas estarão envolvidas. Antes de começar, organizamos todo o processo e apresentamos um cronograma claro, com as principais entregas e datas previstas para cada fase."
   },
   {
-    question: "A Wama pode cuidar apenas de uma etapa?",
+    question: "A Mithun Web pode cuidar apenas de uma etapa?",
     answer: "Podemos participar do projeto do começo ao fim ou entrar apenas em uma etapa específica. Tudo depende do que sua empresa precisa naquele momento. Podemos atuar desde a estratégia e o design até o desenvolvimento, lançamento, apoio ao times de criação e evolução de produtos."
   },
   {
@@ -560,12 +560,12 @@ export const FAQS = [
     answer: "Primeiro buscamos entender o que precisa ser feito, quais são os objetivos do projeto e o nível de trabalho envolvido. A partir disso, montamos uma proposta com escopo, etapas, prazo e investimento, para que você saiba exatamente o que está contratando antes de começar."
   },
   {
-    question: "A Wama oferece acompanhamento depois da publicação?",
+    question: "A Mithun Web oferece acompanhamento depois da publicação?",
     answer: "Sim. Um projeto não precisa terminar no momento em que vai ao ar. Podemos continuar acompanhando o produto, fazendo melhorias, criando novas páginas ou funcionalidades e ajudando sua empresa a evoluir a experiência conforme surgem novas necessidades depois do lançamento."
   },
   {
     question: "Vocês trabalham com produtos que já estão rodando?",
-    answer: "Sim. Não é necessário começar um projeto do zero para trabalhar com a Wama. Podemos entrar em produtos que já estão no mercado para melhorar o design, reorganizar a experiência, corrigir problemas, criar novas funcionalidades ou modernizar uma solução que ficou desatualizada."
+    answer: "Sim. Não é necessário começar um projeto do zero para trabalhar com a Mithun Web. Podemos entrar em produtos que já estão no mercado para melhorar o design, reorganizar a experiência, corrigir problemas, criar novas funcionalidades ou modernizar uma solução que ficou desatualizada."
   },
   {
     question: "É possível desenvolver um projeto em prazo reduzido?",
@@ -577,7 +577,7 @@ export const FAQS = [
   },
   {
     question: "Os arquivos e o código ficam comigo depois da entrega?",
-    answer: "Sim. Depois da conclusão e conforme o que foi definido no projeto, organizamos a entrega dos arquivos, acessos e materiais relacionados ao trabalho realizado. Nosso objetivo é que sua empresa tenha controle sobre aquilo que foi desenvolvido e não fique presa à Wama para continuar evoluindo."
+    answer: "Sim. Depois da conclusão e conforme o que foi definido no projeto, organizamos a entrega dos arquivos, acessos e materiais relacionados ao trabalho realizado. Nosso objetivo é que sua empresa tenha controle sobre aquilo que foi desenvolvido e não fique presa à Mithun Web para continuar evoluindo."
   }
 ];
 

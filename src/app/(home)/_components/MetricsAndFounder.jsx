@@ -1,11 +1,15 @@
 "use client";
 
-import { METRICS, FOUNDER } from "@/data/wama-data";
+import { METRICS, FOUNDER } from "@/data/mithunweb-data";
 
 export default function MetricsAndFounder() {
   return (
-    <section id="sobre" className="bg-[#000000] text-white py-24 sm:py-36 px-4 sm:px-6 relative overflow-hidden">
-      <div className="max-w-[1400px] mx-auto w-[92%]">
+    <section
+      id="sobre"
+      data-theme="dark"
+      className="bg-[#000000] text-white py-28 sm:py-40 px-4 sm:px-6 relative overflow-hidden"
+    >
+      <div className="max-w-[1400px] mx-auto w-[90%]">
         {/* 4 Stats Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-24 sm:mb-36">
           {METRICS.map((metric, idx) => (

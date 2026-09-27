@@ -1,13 +1,17 @@
 "use client";
 
-import { BLOG_POSTS } from "@/data/wama-data";
+import { BLOG_POSTS } from "@/data/mithunweb-data";
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 
 export default function Blog() {
   return (
-    <section id="blog" className="bg-[#ffffff] text-black py-24 sm:py-36 px-4 sm:px-6 relative border-t border-neutral-200">
-      <div className="max-w-[1400px] mx-auto w-[92%]">
+    <section
+      id="blog"
+      data-theme="light"
+      className="bg-[#ffffff] text-black py-28 sm:py-40 px-4 sm:px-6 relative border-t border-neutral-200"
+    >
+      <div className="max-w-[1400px] mx-auto w-[90%]">
         {/* Section Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 pb-14 sm:pb-20 border-b border-neutral-200">
           <div>

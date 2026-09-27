@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { FAQS } from "@/data/wama-data";
+import { FAQS } from "@/data/mithunweb-data";
 import { Plus, Minus, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
@@ -13,8 +13,12 @@ export default function FAQ() {
   };
 
   return (
-    <section id="faq" className="bg-[#ffffff] text-black py-24 sm:py-36 px-4 sm:px-6 relative border-t border-neutral-200">
-      <div className="max-w-[1400px] mx-auto w-[92%]">
+    <section
+      id="faq"
+      data-theme="light"
+      className="bg-[#ffffff] text-black py-28 sm:py-40 px-4 sm:px-6 relative border-t border-neutral-200"
+    >
+      <div className="max-w-[1400px] mx-auto w-[90%]">
         <div className="flex flex-col lg:flex-row items-start justify-between gap-12 lg:gap-20">
           {/* Left Column: Accordion Questions */}
           <div className="w-full lg:max-w-3xl flex-1">
@@ -71,7 +75,7 @@ export default function FAQ() {
                 href="#contato"
                 className="inline-flex items-center justify-between w-full px-6 py-3.5 rounded-full bg-black text-white hover:bg-neutral-800 text-sm font-medium tracking-wide transition-all group"
               >
-                <span>Fale com a Wama</span>
+                <span>Fale com a Mithun Web</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </div>

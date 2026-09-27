@@ -1,54 +1,32 @@
 "use client";
 
 import { useState } from "react";
-import { PROJECTS } from "@/data/wama-data";
+import { PROJECTS } from "@/data/mithunweb-data";
 import { ArrowUpRight } from "lucide-react";
 
-const FILTER_TAGS = ["Todos", "Framer", "Figma", "SaaS", "Aplicativo", "Site", "Branding"];
-
 export default function Projects() {
-  const [activeFilter, setActiveFilter] = useState("Todos");
   const [hoveredProjectId, setHoveredProjectId] = useState(null);
 
-  const filteredProjects = activeFilter === "Todos"
-    ? PROJECTS
-    : PROJECTS.filter((p) => p.tags.some(t => t.toLowerCase() === activeFilter.toLowerCase()));
-
   return (
-    <section id="projetos" className="bg-[#ffffff] text-black py-24 sm:py-36 px-4 sm:px-6 relative">
-      <div className="max-w-[1400px] mx-auto w-[92%]">
+    <section
+      id="projetos"
+      data-theme="light"
+      className="bg-[#ffffff] text-black py-28 sm:py-40 px-4 sm:px-6 relative"
+    >
+      <div className="max-w-[1400px] mx-auto w-[90%]">
         {/* Section Header */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 pb-12 sm:pb-16 border-b border-neutral-200">
-          <div>
-            <div className="text-xs sm:text-sm font-mono tracking-[0.2em] text-neutral-500 uppercase mb-4">
-              PROJETOS
-            </div>
-            <h2 className="text-3xl sm:text-5xl lg:text-[56px] font-normal leading-[1.1] tracking-tight max-w-3xl text-neutral-950">
-              Superando padrões. Não apenas expectativas.
-            </h2>
+        <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-8 pb-16 sm:pb-24">
+          <div className="text-xs sm:text-sm font-mono tracking-[0.2em] text-neutral-500 uppercase pt-2">
+            PROJETOS
           </div>
-
-          {/* Filter Pill Tabs */}
-          <div className="flex flex-wrap items-center gap-2">
-            {FILTER_TAGS.map((tag) => (
-              <button
-                key={tag}
-                onClick={() => setActiveFilter(tag)}
-                className={`px-4 py-2 rounded-full text-xs font-medium tracking-wide transition-all duration-200 ${
-                  activeFilter === tag
-                    ? "bg-black text-white shadow-xs"
-                    : "bg-neutral-100 text-neutral-600 hover:bg-neutral-200 hover:text-black"
-                }`}
-              >
-                {tag}
-              </button>
-            ))}
-          </div>
+          <h2 className="text-3xl sm:text-5xl lg:text-[56px] font-bold leading-[1.08] tracking-[-0.03em] max-w-3xl text-black">
+            Superando padrões. Não apenas expectativas.
+          </h2>
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 pt-12 sm:pt-16">
-          {filteredProjects.map((project) => {
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-14">
+          {PROJECTS.map((project) => {
             const isHovered = hoveredProjectId === project.id;
             const hasVideo = !!project.video;
 

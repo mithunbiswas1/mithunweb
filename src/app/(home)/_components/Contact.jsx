@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { SERVICE_OPTIONS, BUDGET_OPTIONS } from "@/data/wama-data";
+import { SERVICE_OPTIONS, BUDGET_OPTIONS } from "@/data/mithunweb-data";
 import { Check, Mail, MessageSquare, Send, CheckCircle2 } from "lucide-react";
 
 export default function Contact() {
@@ -36,8 +36,12 @@ export default function Contact() {
   };
 
   return (
-    <section id="contato" className="bg-[#000000] text-white py-24 sm:py-36 px-4 sm:px-6 relative overflow-hidden">
-      <div className="max-w-[1400px] mx-auto w-[92%]">
+    <section
+      id="contato"
+      data-theme="dark"
+      className="bg-[#000000] text-white py-28 sm:py-40 px-4 sm:px-6 relative overflow-hidden"
+    >
+      <div className="max-w-[1400px] mx-auto w-[90%]">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           {/* Left Column: Context & Details */}
           <div className="lg:col-span-5 flex flex-col justify-between">
@@ -55,7 +59,7 @@ export default function Contact() {
               {/* Checkpoints */}
               <div className="space-y-4 mb-12">
                 <div className="flex items-start gap-3">
-                  <div className="w-5 h-5 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400 flex-shrink-0 mt-0.5">
+                  <div className="w-5 h-5 rounded-full bg-white/10 flex items-center justify-center text-white flex-shrink-0 mt-0.5">
                     <Check className="w-3 h-3" />
                   </div>
                   <span className="text-sm font-light text-neutral-300">
@@ -63,7 +67,7 @@ export default function Contact() {
                   </span>
                 </div>
                 <div className="flex items-start gap-3">
-                  <div className="w-5 h-5 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400 flex-shrink-0 mt-0.5">
+                  <div className="w-5 h-5 rounded-full bg-white/10 flex items-center justify-center text-white flex-shrink-0 mt-0.5">
                     <Check className="w-3 h-3" />
                   </div>
                   <span className="text-sm font-light text-neutral-300">
@@ -76,25 +80,23 @@ export default function Contact() {
             {/* Direct Contact Links */}
             <div className="space-y-4 pt-6 border-t border-neutral-800">
               <a
-                href="mailto:comercial@wama.digital"
+                href="mailto:contato@mithunweb.com"
                 className="flex items-center gap-3 text-neutral-300 hover:text-white transition-colors group"
               >
                 <div className="w-10 h-10 rounded-xl bg-neutral-900 border border-white/10 flex items-center justify-center text-neutral-400 group-hover:text-white transition-colors">
                   <Mail className="w-4 h-4" />
                 </div>
-                <span className="text-sm font-mono tracking-wide">comercial@wama.digital</span>
+                <span className="text-sm font-mono tracking-wide">contato@mithunweb.com</span>
               </a>
 
               <a
                 href="https://wa.me/5519999999999"
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-3 text-neutral-300 hover:text-white transition-colors group"
+                className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-[#cdff59] text-black hover:bg-[#bcf148] font-medium text-sm transition-all duration-200 shadow-md"
               >
-                <div className="w-10 h-10 rounded-xl bg-neutral-900 border border-white/10 flex items-center justify-center text-neutral-400 group-hover:text-emerald-400 transition-colors">
-                  <MessageSquare className="w-4 h-4" />
-                </div>
-                <span className="text-sm font-mono tracking-wide">Atendimento WhatsApp</span>
+                <MessageSquare className="w-4 h-4" />
+                <span>Atendimento WhatsApp</span>
               </a>
             </div>
           </div>
@@ -181,7 +183,7 @@ export default function Contact() {
                 {/* Service Selection Pills */}
                 <div>
                   <label className="block text-xs font-mono tracking-wide text-neutral-400 mb-3 uppercase">
-                    Qual serviço você busca na Wama?*
+                    Qual serviço você busca na Mithun Web?*
                   </label>
                   <div className="flex flex-wrap gap-2">
                     {SERVICE_OPTIONS.map((srv) => {

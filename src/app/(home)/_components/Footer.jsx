@@ -1,18 +1,21 @@
 "use client";
 
 import Link from "next/link";
-import WamaLogo from "./WamaLogo";
+import BrandLogo from "./BrandLogo";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#000000] text-white pt-20 pb-16 px-4 sm:px-6 border-t border-neutral-900 select-none">
-      <div className="max-w-[1400px] mx-auto w-[92%]">
+    <footer
+      data-theme="dark"
+      className="bg-[#000000] text-white pt-24 pb-16 px-4 sm:px-6 border-t border-neutral-900 select-none"
+    >
+      <div className="max-w-[1400px] mx-auto w-[90%]">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 pb-16 border-b border-neutral-900">
           {/* Brand & Address Column */}
           <div className="lg:col-span-4 flex flex-col justify-between">
             <div>
-              <Link href="/" className="inline-block mb-8" aria-label="Wama Home">
-                <WamaLogo className="h-6 w-auto text-white" />
+              <Link href="/" className="inline-block mb-8" aria-label="Mithun Web Home">
+                <BrandLogo className="h-6 w-auto text-white" />
               </Link>
               <div className="space-y-1 text-sm font-light text-neutral-400">
                 <p>Campinas - SP</p>
@@ -22,7 +25,7 @@ export default function Footer() {
             </div>
 
             <div className="pt-10 text-xs font-mono text-neutral-600">
-              © wama 2026. Todos os direitos reservados.
+              © Mithun Web 2026. Todos os direitos reservados.
             </div>
           </div>
 

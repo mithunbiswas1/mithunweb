@@ -1,4 +1,4 @@
-export default function WamaLogo({ className = "h-5 w-auto", color = "currentColor" }) {
+export default function BrandLogo({ className = "h-5 w-auto", color = "currentColor" }) {
   return (
     <svg 
       viewBox="0 0 101 23" 
