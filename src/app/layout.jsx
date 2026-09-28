@@ -25,6 +25,10 @@ export const metadata = {
   icons: {
     icon: [
       {
+        url: "/favicon.svg",
+        type: "image/svg+xml",
+      },
+      {
         url: "/images/icons/InmV8zs6TpFKUGdN3OeeQf60oIc.png",
         media: "(prefers-color-scheme: light)",
       },
@@ -33,6 +37,7 @@ export const metadata = {
         media: "(prefers-color-scheme: dark)",
       },
     ],
+    shortcut: "/favicon.ico",
     apple: "/images/icons/TsQgtMigLZDvUbZSdD8m70svgpQ.png",
   },
   openGraph: {
