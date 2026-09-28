@@ -17,17 +17,17 @@ export default function Home() {
         "@type": "WebPage",
         "@id": "https://mithunweb.vercel.app/#webpage",
         "url": "https://mithunweb.vercel.app",
-        "name": "Mithun Web | Design de Excelência, Sites, SaaS e Aplicativos",
+        "name": "Mithun Web | Design Excellence, Websites, SaaS & Applications",
         "about": { "@id": "https://mithunweb.vercel.app/#organization" },
-        "inLanguage": "pt-BR"
+        "inLanguage": "en-US"
       },
       {
         "@type": "Organization",
         "@id": "https://mithunweb.vercel.app/#organization",
         "name": "Mithun Web",
         "url": "https://mithunweb.vercel.app",
-        "logo": "https://framerusercontent.com/images/hxiEcAniRHQ0i8LJkuyQQyJc.png",
-        "description": "Sites em Framer, SaaS, sistemas e aplicativos personalizados."
+        "logo": "/images/projects/followhr-project.webp",
+        "description": "Custom Framer websites, SaaS platforms, bespoke systems, and mobile applications."
       }
     ]
   };

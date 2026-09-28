@@ -15,13 +15,13 @@ export default function Hero() {
       <div className="max-w-[1400px] mx-auto w-[90%] flex flex-col items-center text-center">
         {/* Master Heading */}
         <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-[76px] font-bold leading-[1.08] tracking-[-0.03em] max-w-4xl text-black">
-          Design e desenvolvimento de produtos digitais
+          Design and development of digital products
         </h1>
 
         {/* Subtitle */}
         <p className="text-base sm:text-lg md:text-xl font-normal text-black max-w-2xl leading-relaxed mt-6 sm:mt-7">
-          Uma nova geração de sites, sistemas e aplicativos construídos com design de{" "}
-          <strong className="font-semibold">excelência, valor</strong> e sempre superando as expectativas
+          A new generation of websites, systems, and applications built with design of{" "}
+          <strong className="font-semibold">excellence, value</strong>, and always exceeding expectations.
         </p>
 
         {/* The Exact Signature Fanned Arc of Mockup Cards */}
@@ -67,4 +67,3 @@ export default function Hero() {
     </section>
   );
 }
-

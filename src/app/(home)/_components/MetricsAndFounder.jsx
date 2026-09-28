@@ -5,7 +5,7 @@ import { METRICS, FOUNDER } from "@/data/mithunweb-data";
 export default function MetricsAndFounder() {
   return (
     <section
-      id="sobre"
+      id="about"
       data-theme="dark"
       className="bg-[#000000] text-white py-28 sm:py-40 px-4 sm:px-6 relative overflow-hidden"
     >
@@ -59,10 +59,10 @@ export default function MetricsAndFounder() {
           {/* Right Decorative Badge */}
           <div className="relative z-10 flex-shrink-0 flex flex-col items-center justify-center p-8 rounded-2xl bg-white/[0.04] border border-white/10 backdrop-blur-md">
             <span className="text-xs font-mono tracking-widest text-emerald-400 uppercase mb-2">
-              ● Reconhecimento Internacional
+              ● International Recognition
             </span>
             <span className="text-lg font-medium text-white text-center">
-              1º Studio Framer PRO da América Latina
+              Top Framer PRO Studio &amp; Partner
             </span>
           </div>
         </div>

@@ -5,15 +5,15 @@ import { SERVICE_OPTIONS, BUDGET_OPTIONS } from "@/data/mithunweb-data";
 import { Check, Mail, MessageSquare, Send, CheckCircle2 } from "lucide-react";
 
 export default function Contact() {
-  const [selectedServices, setSelectedServices] = useState(["Site"]);
-  const [selectedBudget, setSelectedBudget] = useState("R$ 10 mil a R$ 50 mil");
+  const [selectedServices, setSelectedServices] = useState(["Website"]);
+  const [selectedBudget, setSelectedBudget] = useState("$5,000 to $15,000");
   const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({
-    nome: "",
-    telefone: "",
-    empresa: "",
+    name: "",
+    phone: "",
+    company: "",
     email: "",
-    detalhes: "",
+    details: "",
   });
 
   const toggleService = (srv) => {
@@ -31,13 +31,13 @@ export default function Contact() {
     setSubmitted(true);
     setTimeout(() => {
       setSubmitted(false);
-      setFormData({ nome: "", telefone: "", empresa: "", email: "", detalhes: "" });
+      setFormData({ name: "", phone: "", company: "", email: "", details: "" });
     }, 5000);
   };
 
   return (
     <section
-      id="contato"
+      id="contact"
       data-theme="dark"
       className="bg-[#000000] text-white py-28 sm:py-40 px-4 sm:px-6 relative overflow-hidden"
     >
@@ -47,13 +47,13 @@ export default function Contact() {
           <div className="lg:col-span-5 flex flex-col justify-between">
             <div>
               <div className="text-xs sm:text-sm font-mono tracking-[0.2em] text-neutral-400 uppercase mb-4">
-                FALE CONOSCO
+                GET IN TOUCH
               </div>
               <h2 className="text-3xl sm:text-5xl lg:text-[54px] font-normal leading-[1.1] tracking-tight text-white mb-6">
-                Seu próximo projeto começa aqui
+                Your next project starts here
               </h2>
               <p className="text-base sm:text-lg font-light text-neutral-400 leading-relaxed mb-10">
-                Entendemos seu momento, seus objetivos e mostramos como design e código podem transformar sua ideia em um produto digital de alto nível.
+                We understand your vision, your goals, and show how design and code can transform your idea into a world-class digital product.
               </p>
 
               {/* Checkpoints */}
@@ -63,7 +63,7 @@ export default function Contact() {
                     <Check className="w-3 h-3" />
                   </div>
                   <span className="text-sm font-light text-neutral-300">
-                    Entendimento do projeto, objetivos e necessidades;
+                    Deep understanding of the project, objectives, and requirements;
                   </span>
                 </div>
                 <div className="flex items-start gap-3">
@@ -71,7 +71,7 @@ export default function Contact() {
                     <Check className="w-3 h-3" />
                   </div>
                   <span className="text-sm font-light text-neutral-300">
-                    Próximos passos claros para tirar o projeto do papel.
+                    Clear, actionable next steps to bring your project to life.
                   </span>
                 </div>
               </div>
@@ -80,23 +80,23 @@ export default function Contact() {
             {/* Direct Contact Links */}
             <div className="space-y-4 pt-6 border-t border-neutral-800">
               <a
-                href="mailto:contato@mithunweb.com"
+                href="mailto:hello@mithunweb.com"
                 className="flex items-center gap-3 text-neutral-300 hover:text-white transition-colors group"
               >
                 <div className="w-10 h-10 rounded-xl bg-neutral-900 border border-white/10 flex items-center justify-center text-neutral-400 group-hover:text-white transition-colors">
                   <Mail className="w-4 h-4" />
                 </div>
-                <span className="text-sm font-mono tracking-wide">contato@mithunweb.com</span>
+                <span className="text-sm font-mono tracking-wide">hello@mithunweb.com</span>
               </a>
 
               <a
-                href="https://wa.me/5519999999999"
+                href="https://wa.me/"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-[#cdff59] text-black hover:bg-[#bcf148] font-medium text-sm transition-all duration-200 shadow-md"
               >
                 <MessageSquare className="w-4 h-4" />
-                <span>Atendimento WhatsApp</span>
+                <span>Chat on WhatsApp</span>
               </a>
             </div>
           </div>
@@ -106,19 +106,19 @@ export default function Contact() {
             {submitted ? (
               <div className="py-20 flex flex-col items-center justify-center text-center animate-fade-in">
                 <CheckCircle2 className="w-16 h-16 text-emerald-400 mb-6" />
-                <h3 className="text-2xl font-normal text-white mb-2">Mensagem enviada com sucesso!</h3>
+                <h3 className="text-2xl font-normal text-white mb-2">Message sent successfully!</h3>
                 <p className="text-sm font-light text-neutral-400 max-w-md">
-                  Recebemos seus dados e nosso time de design e estratégia entrará em contato em breve para apresentar a melhor proposta.
+                  We have received your inquiry and our team will get in touch shortly with a customized proposal.
                 </p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-8">
                 <div>
                   <h3 className="text-xl sm:text-2xl font-normal text-white mb-1">
-                    Conte para nós o que você quer construir.
+                    Tell us what you want to build.
                   </h3>
                   <p className="text-xs sm:text-sm font-light text-neutral-400">
-                    Preencha o formulário abaixo para receber uma proposta personalizada.
+                    Fill out the form below to receive a personalized proposal.
                   </p>
                 </div>
 
@@ -126,53 +126,53 @@ export default function Contact() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-xs font-mono tracking-wide text-neutral-400 mb-2 uppercase">
-                      Nome
+                      Name
                     </label>
                     <input
                       type="text"
                       required
-                      placeholder="Seu nome"
-                      value={formData.nome}
-                      onChange={(e) => setFormData({ ...formData, nome: e.target.value })}
+                      placeholder="Your name"
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       className="w-full h-12 px-4 rounded-xl bg-neutral-900/90 border border-neutral-800 focus:border-white/40 focus:outline-none text-white text-sm placeholder:text-neutral-600 transition-colors"
                     />
                   </div>
 
                   <div>
                     <label className="block text-xs font-mono tracking-wide text-neutral-400 mb-2 uppercase">
-                      Telefone / WhatsApp
+                      Phone / WhatsApp
                     </label>
                     <input
                       type="tel"
                       required
-                      placeholder="(00) 00000-0000"
-                      value={formData.telefone}
-                      onChange={(e) => setFormData({ ...formData, telefone: e.target.value })}
+                      placeholder="+1 (555) 000-0000"
+                      value={formData.phone}
+                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       className="w-full h-12 px-4 rounded-xl bg-neutral-900/90 border border-neutral-800 focus:border-white/40 focus:outline-none text-white text-sm placeholder:text-neutral-600 transition-colors"
                     />
                   </div>
 
                   <div>
                     <label className="block text-xs font-mono tracking-wide text-neutral-400 mb-2 uppercase">
-                      Empresa
+                      Company
                     </label>
                     <input
                       type="text"
-                      placeholder="Nome da empresa"
-                      value={formData.empresa}
-                      onChange={(e) => setFormData({ ...formData, empresa: e.target.value })}
+                      placeholder="Company name"
+                      value={formData.company}
+                      onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                       className="w-full h-12 px-4 rounded-xl bg-neutral-900/90 border border-neutral-800 focus:border-white/40 focus:outline-none text-white text-sm placeholder:text-neutral-600 transition-colors"
                     />
                   </div>
 
                   <div>
                     <label className="block text-xs font-mono tracking-wide text-neutral-400 mb-2 uppercase">
-                      E-mail
+                      Email
                     </label>
                     <input
                       type="email"
                       required
-                      placeholder="seu@email.com"
+                      placeholder="you@company.com"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       className="w-full h-12 px-4 rounded-xl bg-neutral-900/90 border border-neutral-800 focus:border-white/40 focus:outline-none text-white text-sm placeholder:text-neutral-600 transition-colors"
@@ -183,7 +183,7 @@ export default function Contact() {
                 {/* Service Selection Pills */}
                 <div>
                   <label className="block text-xs font-mono tracking-wide text-neutral-400 mb-3 uppercase">
-                    Qual serviço você busca na Mithun Web?*
+                    Which service are you looking for at Mithun Web?*
                   </label>
                   <div className="flex flex-wrap gap-2">
                     {SERVICE_OPTIONS.map((srv) => {
@@ -209,7 +209,7 @@ export default function Contact() {
                 {/* Budget Selection Pills */}
                 <div>
                   <label className="block text-xs font-mono tracking-wide text-neutral-400 mb-3 uppercase">
-                    Você já tem algum orçamento em mente?
+                    Do you have a budget in mind?
                   </label>
                   <div className="flex flex-wrap gap-2">
                     {BUDGET_OPTIONS.map((budget) => {
@@ -235,13 +235,13 @@ export default function Contact() {
                 {/* Project Details Textarea */}
                 <div>
                   <label className="block text-xs font-mono tracking-wide text-neutral-400 mb-2 uppercase">
-                    Detalhes do projeto
+                    Project Details
                   </label>
                   <textarea
                     rows={4}
-                    placeholder="Conte um pouco sobre os objetivos do projeto, prazos e expectativas..."
-                    value={formData.detalhes}
-                    onChange={(e) => setFormData({ ...formData, detalhes: e.target.value })}
+                    placeholder="Tell us about your project goals, timelines, and expectations..."
+                    value={formData.details}
+                    onChange={(e) => setFormData({ ...formData, details: e.target.value })}
                     className="w-full p-4 rounded-xl bg-neutral-900/90 border border-neutral-800 focus:border-white/40 focus:outline-none text-white text-sm placeholder:text-neutral-600 transition-colors resize-y"
                   />
                 </div>
@@ -249,9 +249,9 @@ export default function Contact() {
                 {/* Submit CTA */}
                 <button
                   type="submit"
-                  className="w-full py-4 px-8 rounded-full bg-white hover:bg-neutral-200 text-black font-medium tracking-wide text-sm flex items-center justify-center gap-2 transition-all hover:scale-[1.01] active:scale-[0.99] shadow-lg"
+                  className="w-full py-4 px-8 rounded-full bg-white hover:bg-neutral-200 text-black font-medium tracking-wide text-sm flex items-center justify-center gap-2 transition-all hover:scale-[1.01] active:scale-[0.99] shadow-lg cursor-pointer"
                 >
-                  <span>Enviar proposta</span>
+                  <span>Send proposal</span>
                   <Send className="w-4 h-4" />
                 </button>
               </form>

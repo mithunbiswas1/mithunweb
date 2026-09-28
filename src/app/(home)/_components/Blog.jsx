@@ -19,15 +19,15 @@ export default function Blog() {
               BLOG
             </div>
             <h2 className="text-3xl sm:text-5xl font-normal leading-[1.1] tracking-tight text-neutral-950">
-              Artigos &amp; notícias
+              Articles &amp; insights
             </h2>
           </div>
 
           <Link
-            href="#blog"
+            href="/blog"
             className="inline-flex items-center gap-2 text-sm font-medium text-neutral-800 hover:text-black group"
           >
-            <span>Ver todos os artigos</span>
+            <span>View all articles</span>
             <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </Link>
         </div>
@@ -35,8 +35,9 @@ export default function Blog() {
         {/* Blog Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pt-12 sm:pt-16">
           {BLOG_POSTS.map((post) => (
-            <article
+            <Link
               key={post.id}
+              href={`/blog/${post.slug}`}
               className="group flex flex-col justify-between cursor-pointer"
             >
               <div>
@@ -65,10 +66,10 @@ export default function Blog() {
               </div>
 
               <div className="pt-6 flex items-center gap-1.5 text-xs font-medium text-neutral-900 group-hover:text-black">
-                <span>Ler artigo</span>
+                <span>Read article</span>
                 <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </div>
-            </article>
+            </Link>
           ))}
         </div>
       </div>

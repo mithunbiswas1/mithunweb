@@ -5,7 +5,7 @@ import { SERVICES } from "@/data/mithunweb-data";
 export default function Services() {
   return (
     <section
-      id="servicos"
+      id="services"
       data-theme="light"
       className="bg-[#ffffff] text-black py-28 sm:py-40 px-4 sm:px-6 relative"
     >
@@ -13,10 +13,10 @@ export default function Services() {
         {/* Section Header */}
         <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-8 pb-16 sm:pb-24">
           <div className="text-xs sm:text-sm font-mono tracking-[0.2em] text-neutral-500 uppercase pt-2">
-            SERVIÇOS
+            SERVICES
           </div>
           <h2 className="text-3xl sm:text-5xl lg:text-[56px] font-bold leading-[1.08] tracking-[-0.03em] max-w-3xl text-black">
-            Soluções para cada etapa do seu negócio
+            Solutions for every stage of your business
           </h2>
         </div>
 
@@ -58,4 +58,3 @@ export default function Services() {
     </section>
   );
 }
-

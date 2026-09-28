@@ -5,7 +5,7 @@ import { CLIENT_LOGOS_DATA } from "@/data/client-logos";
 export default function Clients() {
   return (
     <section
-      id="clientes"
+      id="clients"
       data-theme="dark"
       className="bg-[#000000] text-white py-28 sm:py-40 px-4 sm:px-6 relative overflow-hidden"
     >
@@ -13,10 +13,10 @@ export default function Clients() {
         {/* Section Header */}
         <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-8 pb-16 sm:pb-24">
           <div className="text-xs sm:text-sm font-mono tracking-[0.2em] text-neutral-400 uppercase pt-2">
-            CLIENTES
+            CLIENTS
           </div>
           <h2 className="text-3xl sm:text-5xl lg:text-[56px] font-bold leading-[1.08] tracking-[-0.03em] max-w-3xl text-white">
-            Criatividade, excelência, &amp; reconhecimento.
+            Creativity, excellence, &amp; recognition.
           </h2>
         </div>
 
@@ -38,4 +38,3 @@ export default function Clients() {
     </section>
   );
 }
-

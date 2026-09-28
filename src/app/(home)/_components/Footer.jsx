@@ -11,53 +11,53 @@ export default function Footer() {
     >
       <div className="max-w-[1400px] mx-auto w-[90%]">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 pb-16 border-b border-neutral-900">
-          {/* Brand & Address Column */}
+          {/* Brand & Studio Column */}
           <div className="lg:col-span-4 flex flex-col justify-between">
             <div>
               <Link href="/" className="inline-block mb-8" aria-label="Mithun Web Home">
                 <BrandLogo className="h-6 w-auto text-white" />
               </Link>
-              <div className="space-y-1 text-sm font-light text-neutral-400">
-                <p>Campinas - SP</p>
-                <p>Av. Imperatriz D. Teresa Cristina.</p>
-                <p className="pt-2 text-xs font-mono text-neutral-500">CNPJ 39.355.398/0001-14</p>
+              <div className="space-y-1.5 text-sm font-light text-neutral-400">
+                <p>Digital Product &amp; Design Studio</p>
+                <p>Crafting high-performance websites, SaaS &amp; systems.</p>
+                <p className="pt-2 text-xs font-mono text-neutral-500">Available for select projects worldwide.</p>
               </div>
             </div>
 
             <div className="pt-10 text-xs font-mono text-neutral-600">
-              © Mithun Web 2026. Todos os direitos reservados.
+              © Mithun Web 2026. All rights reserved.
             </div>
           </div>
 
-          {/* Column 1: Serviços */}
+          {/* Column 1: Services */}
           <div className="lg:col-span-2">
             <h4 className="text-xs font-mono tracking-widest text-neutral-500 uppercase mb-6">
-              SERVIÇOS
+              SERVICES
             </h4>
             <ul className="space-y-3.5 text-sm font-light text-neutral-400">
               <li>
-                <Link href="#servicos" className="hover:text-white transition-colors">
-                  Sites em Framer
+                <Link href="/#services" className="hover:text-white transition-colors">
+                  Framer Websites
                 </Link>
               </li>
               <li>
-                <Link href="#servicos" className="hover:text-white transition-colors">
-                  Desenvolvimento de SaaS
+                <Link href="/#services" className="hover:text-white transition-colors">
+                  SaaS Development
                 </Link>
               </li>
               <li>
-                <Link href="#servicos" className="hover:text-white transition-colors">
-                  Aplicativos
+                <Link href="/#services" className="hover:text-white transition-colors">
+                  Mobile Apps
                 </Link>
               </li>
               <li>
-                <Link href="#servicos" className="hover:text-white transition-colors">
-                  Design de Interfaces
+                <Link href="/#services" className="hover:text-white transition-colors">
+                  Interface Design
                 </Link>
               </li>
               <li>
-                <Link href="#servicos" className="hover:text-white transition-colors">
-                  Consultoria de Design
+                <Link href="/#services" className="hover:text-white transition-colors">
+                  Design Consulting
                 </Link>
               </li>
             </ul>
@@ -70,38 +70,48 @@ export default function Footer() {
             </h4>
             <ul className="space-y-3.5 text-sm font-light text-neutral-400">
               <li>
-                <Link href="#projetos" className="hover:text-white transition-colors">
-                  Camila Farani
+                <Link href="/projects/follow-hr" className="hover:text-white transition-colors">
+                  Follow HR
                 </Link>
               </li>
               <li>
-                <Link href="#projetos" className="hover:text-white transition-colors">
-                  KFC Brasil
+                <Link href="/projects/follow-hr-app" className="hover:text-white transition-colors">
+                  Follow HR App
                 </Link>
               </li>
               <li>
-                <Link href="#projetos" className="hover:text-white transition-colors">
-                  Tera
+                <Link href="/projects/follow-hr-jobs" className="hover:text-white transition-colors">
+                  Follow HR Jobs
                 </Link>
               </li>
               <li>
-                <Link href="#projetos" className="hover:text-white transition-colors">
-                  Vibra
+                <Link href="/projects/meragadi" className="hover:text-white transition-colors">
+                  MeraGadi
                 </Link>
               </li>
               <li>
-                <Link href="#projetos" className="hover:text-white transition-colors">
-                  Wiz Benefícios
+                <Link href="/projects/western-loom" className="hover:text-white transition-colors">
+                  Western Loom
                 </Link>
               </li>
               <li>
-                <Link href="#projetos" className="hover:text-white transition-colors">
-                  Pepper
+                <Link href="/projects/crostini" className="hover:text-white transition-colors">
+                  Crostini
+                </Link>
+              </li>
+              <li>
+                <Link href="/projects/edcl" className="hover:text-white transition-colors">
+                  EDCL
+                </Link>
+              </li>
+              <li>
+                <Link href="/projects/xengo-mart" className="hover:text-white transition-colors">
+                  Xengo Mart
                 </Link>
               </li>
               <li className="pt-2">
-                <Link href="#projetos" className="text-white hover:underline text-xs font-mono">
-                  Ver todos os cases →
+                <Link href="/projects" className="text-white hover:underline text-xs font-mono">
+                  View all cases →
                 </Link>
               </li>
             </ul>
@@ -114,42 +124,37 @@ export default function Footer() {
             </h4>
             <ul className="space-y-3.5 text-xs font-light text-neutral-400">
               <li>
-                <Link href="#blog" className="hover:text-white transition-colors line-clamp-1">
-                  Agência de desenvolvimento de SaaS: o que exigir
+                <Link href="/blog/ui-ux-agency-what-to-evaluate-before-hiring" className="hover:text-white transition-colors line-clamp-1">
+                  UI/UX Agency: What to evaluate
                 </Link>
               </li>
               <li>
-                <Link href="#blog" className="hover:text-white transition-colors line-clamp-1">
-                  Modelo de cobrança de SaaS: o que cada um exige
+                <Link href="/blog/fintech-ui-ux-modern-instant-payments" className="hover:text-white transition-colors line-clamp-1">
+                  Fintech UI/UX: Modern instant payments
                 </Link>
               </li>
               <li>
-                <Link href="#blog" className="hover:text-white transition-colors line-clamp-1">
-                  Licença de fonte para site: o que a empresa assume
+                <Link href="/blog/fintech-website-development-regulatory-compliance" className="hover:text-white transition-colors line-clamp-1">
+                  Website development: Regulatory compliance
                 </Link>
               </li>
               <li>
-                <Link href="#blog" className="hover:text-white transition-colors line-clamp-1">
-                  Software sob medida: quem é o dono do código
-                </Link>
-              </li>
-              <li>
-                <Link href="#blog" className="hover:text-white transition-colors line-clamp-1">
-                  Criar SaaS com IA: o que falta para cobrar cliente
+                <Link href="/blog/fintech-mobile-apps-store-requirements" className="hover:text-white transition-colors line-clamp-1">
+                  Fintech Mobile Apps: Store requirements
                 </Link>
               </li>
               <li className="pt-2">
-                <Link href="#blog" className="text-white hover:underline font-mono">
-                  Ver todos os artigos →
+                <Link href="/blog" className="text-white hover:underline font-mono">
+                  View all articles →
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Column 4: Redes Sociais */}
+          {/* Column 4: Social */}
           <div className="lg:col-span-2">
             <h4 className="text-xs font-mono tracking-widest text-neutral-500 uppercase mb-6">
-              REDES SOCIAIS
+              CONNECT
             </h4>
             <ul className="space-y-3.5 text-sm font-light text-neutral-400">
               <li>
@@ -189,7 +194,7 @@ export default function Footer() {
                   rel="noreferrer"
                   className="hover:text-white transition-colors"
                 >
-                  Linkedin
+                  LinkedIn
                 </a>
               </li>
               <li>
@@ -208,13 +213,13 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-neutral-500 font-light gap-4">
-          <p>Feito com excelência de design e Next.js moderno.</p>
+          <p>Crafted with design excellence and modern Next.js.</p>
           <div className="flex items-center gap-6">
-            <Link href="#privacy" className="hover:text-neutral-300">
-              Privacidade
+            <Link href="/#privacy" className="hover:text-neutral-300">
+              Privacy Policy
             </Link>
-            <Link href="#terms" className="hover:text-neutral-300">
-              Termos de Uso
+            <Link href="/#terms" className="hover:text-neutral-300">
+              Terms of Service
             </Link>
           </div>
         </div>

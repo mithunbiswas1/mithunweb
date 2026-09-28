@@ -87,14 +87,14 @@ export default function Navbar() {
         {/* Right CTA */}
         <div className="hidden sm:flex items-center gap-4">
           <Link
-            href="#contato"
+            href="#contact"
             className={`inline-flex items-center justify-center px-6 py-2.5 text-sm font-medium tracking-wide rounded-full transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] ${
               isDarkSection
                 ? "bg-white text-black hover:bg-neutral-200"
                 : "bg-black text-white hover:bg-neutral-800 shadow-sm"
             }`}
           >
-            Inicie um projeto
+            Start a project
           </Link>
         </div>
 
@@ -144,7 +144,7 @@ export default function Navbar() {
           ))}
           <div className="pt-2">
             <Link
-              href="#contato"
+              href="#contact"
               onClick={() => setMenuOpen(false)}
               className={`block w-full text-center py-3 text-sm font-medium rounded-full transition-colors ${
                 isDarkSection
@@ -152,7 +152,7 @@ export default function Navbar() {
                   : "bg-black text-white hover:bg-neutral-800"
               }`}
             >
-              Inicie um projeto
+              Start a project
             </Link>
           </div>
         </div>
