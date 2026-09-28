@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { SERVICE_OPTIONS, BUDGET_OPTIONS } from "@/data/mithunweb-data";
 import { Check, Mail, MessageSquare, Send, CheckCircle2 } from "lucide-react";
 
@@ -15,6 +15,29 @@ export default function Contact() {
     email: "",
     details: "",
   });
+
+  const sectionRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el || typeof IntersectionObserver === "undefined") {
+      setIsVisible(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { rootMargin: "-60px" }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   const toggleService = (srv) => {
     if (selectedServices.includes(srv)) {
@@ -38,13 +61,18 @@ export default function Contact() {
   return (
     <section
       id="contact"
+      ref={sectionRef}
       data-theme="dark"
       className="bg-[#000000] text-white py-28 sm:py-40 px-4 sm:px-6 relative overflow-hidden"
     >
       <div className="max-w-[1400px] mx-auto w-[90%]">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-          {/* Left Column: Context & Details */}
-          <div className="lg:col-span-5 flex flex-col justify-between">
+          {/* Left Column: Context & Details with Wama Scroll Entrance */}
+          <div
+            className={`lg:col-span-5 flex flex-col justify-between transition-all duration-800 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+            }`}
+          >
             <div>
               <div className="text-xs sm:text-sm font-mono tracking-[0.2em] text-neutral-400 uppercase mb-4">
                 GET IN TOUCH
@@ -83,7 +111,7 @@ export default function Contact() {
                 href="mailto:hello@mithunweb.com"
                 className="flex items-center gap-3 text-neutral-300 hover:text-white transition-colors group"
               >
-                <div className="w-10 h-10 rounded-xl bg-neutral-900 border border-white/10 flex items-center justify-center text-neutral-400 group-hover:text-white transition-colors">
+                <div className="w-10 h-10 rounded-xl bg-neutral-900 border border-white/10 flex items-center justify-center text-neutral-400 group-hover:text-white group-hover:scale-105 transition-all">
                   <Mail className="w-4 h-4" />
                 </div>
                 <span className="text-sm font-mono tracking-wide">hello@mithunweb.com</span>
@@ -93,7 +121,7 @@ export default function Contact() {
                 href="https://wa.me/"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-[#cdff59] text-black hover:bg-[#bcf148] font-medium text-sm transition-all duration-200 shadow-md"
+                className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-[#cdff59] text-black hover:bg-[#bcf148] font-medium text-sm transition-all duration-300 shadow-md hover:scale-[1.02] active:scale-[0.98]"
               >
                 <MessageSquare className="w-4 h-4" />
                 <span>Chat on WhatsApp</span>
@@ -101,8 +129,16 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* Right Column: Project Inquiry Form */}
-          <div className="lg:col-span-7 bg-[#0c0c0c] border border-white/10 rounded-3xl p-6 sm:p-10 lg:p-12 shadow-2xl">
+          {/* Right Column: Project Inquiry Form Card */}
+          <div
+            className={`lg:col-span-7 bg-[#0c0c0c] border border-white/10 rounded-3xl p-6 sm:p-10 lg:p-12 shadow-2xl transition-all duration-800 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+              isVisible ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-12 scale-[0.98]"
+            }`}
+            style={{
+              transitionDelay: "160ms",
+              willChange: "transform, opacity",
+            }}
+          >
             {submitted ? (
               <div className="py-20 flex flex-col items-center justify-center text-center animate-fade-in">
                 <CheckCircle2 className="w-16 h-16 text-emerald-400 mb-6" />
@@ -193,7 +229,7 @@ export default function Contact() {
                           key={srv}
                           type="button"
                           onClick={() => toggleService(srv)}
-                          className={`px-3.5 py-2 rounded-lg text-xs font-medium tracking-wide transition-all ${
+                          className={`px-3.5 py-2 rounded-lg text-xs font-medium tracking-wide transition-all duration-200 cursor-pointer active:scale-95 ${
                             isSelected
                               ? "bg-white text-black font-semibold shadow-xs"
                               : "bg-neutral-900 text-neutral-400 border border-neutral-800 hover:border-neutral-600 hover:text-white"
@@ -219,7 +255,7 @@ export default function Contact() {
                           key={budget}
                           type="button"
                           onClick={() => setSelectedBudget(budget)}
-                          className={`px-4 py-2 rounded-lg text-xs font-medium tracking-wide transition-all ${
+                          className={`px-4 py-2 rounded-lg text-xs font-medium tracking-wide transition-all duration-200 cursor-pointer active:scale-95 ${
                             isSelected
                               ? "bg-white text-black font-semibold shadow-xs"
                               : "bg-neutral-900 text-neutral-400 border border-neutral-800 hover:border-neutral-600 hover:text-white"

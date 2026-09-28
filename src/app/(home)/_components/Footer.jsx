@@ -1,15 +1,44 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import BrandLogo from "./BrandLogo";
 
 export default function Footer() {
+  const footerRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const el = footerRef.current;
+    if (!el || typeof IntersectionObserver === "undefined") {
+      setIsVisible(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { rootMargin: "-40px" }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <footer
+      ref={footerRef}
       data-theme="dark"
       className="bg-[#000000] text-white pt-24 pb-16 px-4 sm:px-6 border-t border-neutral-900 select-none"
     >
-      <div className="max-w-[1400px] mx-auto w-[90%]">
+      <div
+        className={`max-w-[1400px] mx-auto w-[90%] transition-all duration-800 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        }`}
+      >
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 pb-16 border-b border-neutral-900">
           {/* Brand & Studio Column */}
           <div className="lg:col-span-4 flex flex-col justify-between">

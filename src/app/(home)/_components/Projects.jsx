@@ -1,13 +1,35 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { PROJECTS } from "@/data/mithunweb-data";
-import { ArrowUpRight, Monitor, Laptop, Smartphone } from "lucide-react";
+import { ArrowUpRight, Laptop, Smartphone } from "lucide-react";
 
 export default function Projects() {
   const [hoveredProjectId, setHoveredProjectId] = useState(null);
   const [selectedViews, setSelectedViews] = useState({});
+  const sectionRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el || typeof IntersectionObserver === "undefined") {
+      setIsVisible(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { rootMargin: "-60px" }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   const handleSelectView = (e, projectId, view) => {
     e.preventDefault();
@@ -21,12 +43,17 @@ export default function Projects() {
   return (
     <section
       id="projects"
+      ref={sectionRef}
       data-theme="light"
-      className="bg-[#ffffff] text-black py-28 sm:py-40 px-4 sm:px-6 relative"
+      className="bg-[#ffffff] text-black py-28 sm:py-40 px-4 sm:px-6 relative overflow-hidden"
     >
       <div className="max-w-[1400px] mx-auto w-[90%]">
-        {/* Section Header */}
-        <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-8 pb-16 sm:pb-24">
+        {/* Section Header with Wama-style Scroll Reveal */}
+        <div
+          className={`flex flex-col lg:flex-row lg:items-start justify-between gap-8 pb-16 sm:pb-24 transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
+        >
           <div className="text-xs sm:text-sm font-mono tracking-[0.2em] text-neutral-500 uppercase pt-2">
             PROJECTS &amp; SHOWCASE
           </div>
@@ -35,9 +62,9 @@ export default function Projects() {
           </h2>
         </div>
 
-        {/* Projects Grid */}
+        {/* Projects Grid with Staggered Scroll Entrance */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-14">
-          {PROJECTS.map((project) => {
+          {PROJECTS.map((project, index) => {
             const isHovered = hoveredProjectId === project.id;
             const hasVideo = !!project.video;
             const manualView = selectedViews[project.id];
@@ -57,20 +84,28 @@ export default function Projects() {
                 href={`/projects/${project.id}`}
                 onMouseEnter={() => setHoveredProjectId(project.id)}
                 onMouseLeave={() => setHoveredProjectId(null)}
-                className={`group flex flex-col cursor-pointer ${project.colSpan.includes("lg:col-span-2") ? "lg:col-span-2" : "col-span-1"
-                  }`}
+                className={`group flex flex-col cursor-pointer transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+                  project.colSpan.includes("lg:col-span-2") ? "lg:col-span-2" : "col-span-1"
+                } ${
+                  isVisible ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-12 scale-[0.97]"
+                }`}
+                style={{
+                  transitionDelay: `${Math.min(600, index * 70)}ms`,
+                  willChange: "transform, opacity",
+                }}
               >
-                {/* Media Container */}
-                <div className="relative w-full aspect-[16/10] sm:aspect-[16/9.5] rounded-2xl sm:rounded-3xl overflow-hidden bg-neutral-100 border border-neutral-200/80 shadow-xs transition-all duration-500 group-hover:shadow-2xl group-hover:border-neutral-300">
+                {/* Media Container with Wama-style Superellipse & Shadow Elevation */}
+                <div className="relative w-full aspect-[16/10] sm:aspect-[16/9.5] rounded-2xl sm:rounded-3xl overflow-hidden bg-neutral-100 border border-neutral-200/80 shadow-xs transition-all duration-600 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:shadow-2xl group-hover:shadow-black/15 group-hover:border-neutral-300">
                   {/* Default Flagship Image */}
                   <img
                     src={defaultImg}
                     alt={project.title}
                     loading="lazy"
-                    className={`absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-out ${currentView === "default"
-                        ? "opacity-100 scale-100 group-hover:scale-105"
+                    className={`absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                      currentView === "default"
+                        ? "opacity-100 scale-100 group-hover:scale-[1.03]"
                         : "opacity-0 scale-100 pointer-events-none"
-                      }`}
+                    }`}
                   />
 
                   {/* 3D MacBook Laptop View Image */}
@@ -78,10 +113,11 @@ export default function Projects() {
                     src={laptopImg}
                     alt={`${project.title} 3D MacBook View`}
                     loading="lazy"
-                    className={`absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-out ${currentView === "laptop"
-                        ? "opacity-100 scale-100"
+                    className={`absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                      currentView === "laptop"
+                        ? "opacity-100 scale-100 group-hover:scale-[1.03]"
                         : "opacity-0 scale-100 pointer-events-none"
-                      }`}
+                    }`}
                   />
 
                   {/* Mobile View Image */}
@@ -89,10 +125,11 @@ export default function Projects() {
                     src={mobileImg}
                     alt={`${project.title} Mobile View`}
                     loading="lazy"
-                    className={`absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-out ${currentView === "mobile"
-                        ? "opacity-100 scale-100"
+                    className={`absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                      currentView === "mobile"
+                        ? "opacity-100 scale-100 group-hover:scale-[1.03]"
                         : "opacity-0 scale-100 pointer-events-none"
-                      }`}
+                    }`}
                   />
 
                   {/* Video on Hover if available */}
@@ -113,10 +150,11 @@ export default function Projects() {
                       type="button"
                       title="Default Card View"
                       onClick={(e) => handleSelectView(e, project.id, "default")}
-                      className={`flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-mono transition-all duration-200 ${currentView === "default"
+                      className={`flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-mono transition-all duration-200 ${
+                        currentView === "default"
                           ? "bg-white text-black font-semibold shadow-xs"
                           : "text-neutral-300 hover:text-white"
-                        }`}
+                      }`}
                     >
                       <span>Card</span>
                     </button>
@@ -125,10 +163,11 @@ export default function Projects() {
                       type="button"
                       title="3D MacBook View"
                       onClick={(e) => handleSelectView(e, project.id, "laptop")}
-                      className={`flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-mono transition-all duration-200 ${currentView === "laptop"
+                      className={`flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-mono transition-all duration-200 ${
+                        currentView === "laptop"
                           ? "bg-white text-black font-semibold shadow-xs"
                           : "text-neutral-300 hover:text-white"
-                        }`}
+                      }`}
                     >
                       <Laptop className="w-3 h-3" />
                       <span>Laptop</span>
@@ -138,19 +177,20 @@ export default function Projects() {
                       type="button"
                       title="Mobile View"
                       onClick={(e) => handleSelectView(e, project.id, "mobile")}
-                      className={`flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-mono transition-all duration-200 ${currentView === "mobile"
+                      className={`flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-mono transition-all duration-200 ${
+                        currentView === "mobile"
                           ? "bg-white text-black font-semibold shadow-xs"
                           : "text-neutral-300 hover:text-white"
-                        }`}
+                      }`}
                     >
                       <Smartphone className="w-3 h-3" />
                       <span>Mobile</span>
                     </button>
                   </div>
 
-                  {/* Top-Right: Arrow Badge */}
+                  {/* Top-Right: Arrow Badge with Smooth Kinetic Glide */}
                   <div className="absolute top-4 right-4 sm:top-5 sm:right-5 z-20 w-10 h-10 rounded-full bg-white/95 backdrop-blur-md flex items-center justify-center text-neutral-900 shadow-md opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
-                    <ArrowUpRight className="w-5 h-5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    <ArrowUpRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </div>
                 </div>
 
@@ -187,4 +227,3 @@ export default function Projects() {
     </section>
   );
 }
-
