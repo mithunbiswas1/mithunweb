@@ -66,8 +66,9 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <body
+        suppressHydrationWarning
         className={`${inter.variable} ${fragmentMono.variable} font-sans bg-[#ffffff] text-neutral-900 selection:bg-neutral-900 selection:text-white antialiased`}
       >
         {children}
