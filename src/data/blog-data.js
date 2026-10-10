@@ -1,3 +1,5 @@
+// src/data/blog-data.js
+
 // Structured dataset for Mithun Web Blog Articles
 
 export const BLOG_POSTS = [

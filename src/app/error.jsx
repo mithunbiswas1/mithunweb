@@ -1,3 +1,5 @@
+// src/app/error.jsx
+
 "use client";
 
 import { useEffect } from "react";

@@ -1,4 +1,6 @@
-import { Inter, Fragment_Mono } from "next/font/google";
+// src/app/layout.jsx
+
+import { Inter, Fragment_Mono, Outfit, Roboto } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -13,6 +15,7 @@ const fragmentMono = Fragment_Mono({
   variable: "--font-mono",
   display: "swap",
 });
+
 
 export const metadata = {
   title: "Mithun Web | Design Agency, Websites, SaaS & Applications",
@@ -29,16 +32,16 @@ export const metadata = {
         type: "image/svg+xml",
       },
       {
-        url: "/images/icons/InmV8zs6TpFKUGdN3OeeQf60oIc.png",
+        url: "/favicon.svg",
         media: "(prefers-color-scheme: light)",
       },
       {
-        url: "/images/icons/liZlkr66syBeQlBokhdrHsRgXss.png",
+        url: "/favicon.svg",
         media: "(prefers-color-scheme: dark)",
       },
     ],
     shortcut: "/favicon.ico",
-    apple: "/images/icons/TsQgtMigLZDvUbZSdD8m70svgpQ.png",
+    apple: "/favicon.ico",
   },
   openGraph: {
     type: "website",
@@ -69,7 +72,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <body
         suppressHydrationWarning
-        className={`${inter.variable} ${fragmentMono.variable} font-sans bg-[#ffffff] text-neutral-900 selection:bg-neutral-900 selection:text-white antialiased`}
+        className={`${inter.variable} ${fragmentMono.variable} selection:bg-neutral-200 selection:text-white antialiased`}
       >
         {children}
       </body>

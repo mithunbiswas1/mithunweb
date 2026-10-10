@@ -1,3 +1,5 @@
+// src/data/case-studies-data.js
+
 import { PROJECTS } from "./mithunweb-data";
 
 // Detailed case study information generator

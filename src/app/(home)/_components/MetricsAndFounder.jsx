@@ -1,52 +1,18 @@
-"use client";
+// src/app/(home)/_components/MetricsAndFounder.jsx
 
-import { useEffect, useRef, useState } from "react";
-import { METRICS, FOUNDER } from "@/data/mithunweb-data";
+import Image from "next/image";
+import { METRICS, FOUNDER } from "../_data/home-data";
+import Section from "@/components/shared/Section";
 
 export default function MetricsAndFounder() {
-  const sectionRef = useRef(null);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const el = sectionRef.current;
-    if (!el || typeof IntersectionObserver === "undefined") {
-      setIsVisible(true);
-      return;
-    }
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { rootMargin: "-60px" }
-    );
-
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <section
-      id="about"
-      ref={sectionRef}
-      data-theme="dark"
-      className="bg-[#000000] text-white py-28 sm:py-40 px-4 sm:px-6 relative overflow-hidden"
-    >
-      <div className="max-w-[1400px] mx-auto w-[90%]">
-        {/* 4 Stats Cards Grid with Staggered Wama Reveal */}
+    <Section id="about" theme="dark">
+        {/* 4 Stats Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-24 sm:mb-36">
           {METRICS.map((metric, idx) => (
             <div
               key={idx}
-              className={`bg-white text-black rounded-2xl sm:rounded-3xl p-8 sm:p-10 flex flex-col justify-between min-h-[220px] shadow-lg hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-white/10 transition-all duration-600 ease-[cubic-bezier(0.22,1,0.36,1)] ${
-                isVisible ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-8 scale-[0.97]"
-              }`}
-              style={{
-                transitionDelay: `${idx * 80}ms`,
-                willChange: "transform, opacity",
-              }}
+              className="bg-white text-black rounded-2xl sm:rounded-3xl p-8 sm:p-10 flex flex-col justify-between min-h-[220px] shadow-lg hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-white/10 transition-all duration-300"
             >
               <div className="text-4xl sm:text-5xl lg:text-[52px] font-normal tracking-tight leading-none text-neutral-950">
                 {metric.value}
@@ -58,16 +24,8 @@ export default function MetricsAndFounder() {
           ))}
         </div>
 
-        {/* Founder Testimonial Card with Smooth Scale & Glide */}
-        <div
-          className={`relative rounded-3xl overflow-hidden bg-gradient-to-br from-neutral-900 to-black border border-white/10 p-8 sm:p-14 lg:p-20 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-12 transition-all duration-800 ease-[cubic-bezier(0.22,1,0.36,1)] ${
-            isVisible ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-10 scale-[0.98]"
-          }`}
-          style={{
-            transitionDelay: "320ms",
-            willChange: "transform, opacity",
-          }}
-        >
+        {/* Founder Testimonial Card */}
+        <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-neutral-900 to-black border border-white/10 p-8 sm:p-14 lg:p-20 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-12">
           {/* Subtle Background Texture */}
           <div
             className="absolute inset-0 opacity-20 bg-cover bg-center pointer-events-none mix-blend-screen"
@@ -82,9 +40,11 @@ export default function MetricsAndFounder() {
 
             <div className="flex items-center gap-4">
               <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-white/20 p-0.5 bg-neutral-800">
-                <img
+                <Image
                   src={FOUNDER.photo}
                   alt={FOUNDER.name}
+                  width={56}
+                  height={56}
                   className="w-full h-full object-cover rounded-full"
                 />
               </div>
@@ -105,7 +65,6 @@ export default function MetricsAndFounder() {
             </span>
           </div>
         </div>
-      </div>
-    </section>
+    </Section>
   );
 }

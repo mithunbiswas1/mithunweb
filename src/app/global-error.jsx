@@ -1,3 +1,5 @@
+// src/app/global-error.jsx
+
 "use client";
 
 import Link from "next/link";

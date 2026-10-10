@@ -1,3 +1,5 @@
+// src/app/not-found.jsx
+
 import Link from "next/link";
 
 export const metadata = {

@@ -1,3 +1,5 @@
+// src/app/loading.jsx
+
 // app/loading.jsx
 
 export default function Loading() {
