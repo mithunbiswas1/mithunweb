@@ -13,7 +13,7 @@ export default function ProjectCard({ project, className = "" }) {
 
   return (
     <Link
-      href={`/cases/${project.id}`}
+      href={`/projects/${project.id}`}
       className={`group relative flex flex-col justify-between ${className}`.trim()}
     >
       {/* Visual Canvas Container */}

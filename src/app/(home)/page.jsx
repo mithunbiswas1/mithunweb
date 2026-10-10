@@ -7,7 +7,6 @@ import Services from "./_components/Services";
 import MetricsAndFounder from "./_components/MetricsAndFounder";
 import FAQ from "./_components/FAQ";
 import Blog from "./_components/Blog";
-import Contact from "./_components/Contact";
 import { FAQS } from "./_data/home-data";
 
 export const metadata = {
@@ -102,7 +101,6 @@ export default function Home() {
       <MetricsAndFounder />
       <FAQ />
       <Blog />
-      <Contact />
     </main>
   );
 }

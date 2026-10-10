@@ -4,7 +4,7 @@
 
 ### 1. Next.js App Router Structure
 - **Root Landing Page**: Located in `src/app/(home)/page.jsx`, wrapped by `src/app/(home)/layout.jsx` and the root `src/app/layout.jsx`.
-- **Inner Pages Route Group**: Located in `src/app/(pages)/` (e.g., `src/app/(pages)/blog`, `src/app/(pages)/projects`, `src/app/(pages)/cases`), wrapped by `src/app/(pages)/layout.jsx`.
+- **Inner Pages Route Group**: Located in `src/app/(pages)/` (e.g., `src/app/(pages)/blog`, `src/app/(pages)/projects`), wrapped by `src/app/(pages)/layout.jsx`.
 - **Layout Rule**: Both `(home)/layout.jsx` and `(pages)/layout.jsx` render `<Navbar />` and `<Footer />` from `@/components/common/Navbar` and `@/components/common/Footer`. Do not duplicate `<Navbar />` or `<Footer />` inside individual page components.
 
 ### 2. Component Organization & Direct Imports
@@ -14,12 +14,12 @@
 - **No Barrel Re-exports**: Do not create or use `index.js` files with `export { default as ... } from "./..."`. Always import directly from the component file path (e.g. `import ProjectCard from "@/components/shared/ProjectCard";`, `import Navbar from "@/components/common/Navbar";`).
 
 ### 3. Page Sub-components Colocation (`_components`)
-- Any component specific to a page or route must be placed inside a `_components/` subfolder within that route's directory (e.g. `src/app/(pages)/cases/[slug]/_components/CaseStudyDetailView.jsx`, `src/app/(home)/_components/Hero.jsx`).
+- Any component specific to a page or route must be placed inside a `_components/` subfolder within that route's directory (e.g. `src/app/(pages)/projects/[slug]/_components/CaseStudyDetailView.jsx`, `src/app/(home)/_components/Hero.jsx`).
 
 ### 4. File Header Path Comment Rule
 - Every code file under `src/` must have its relative file path as a comment on line 1:
   ```javascript
-  // src/app/(pages)/cases/[slug]/page.jsx
+  // src/app/(pages)/projects/[slug]/page.jsx
   ```
 
 ### 5. Next.js 16+ Server-First & Client Islands Rule (`_clients`)
@@ -31,7 +31,7 @@
 - **Image Optimization**: Use Next.js `<Image>` with explicit `sizes` and `priority` for above-the-fold hero assets to ensure optimal LCP and Core Web Vitals.
 
 ### 6. Data Colocation Rule (`_data`)
-- Route-specific datasets must be colocated in a `_data/` folder adjacent to `_components/` and `_clients/` (e.g. `src/app/(home)/_data/`, `src/app/(pages)/blog/_data/`, `src/app/(pages)/cases/_data/`).
+- Route-specific datasets must be colocated in a `_data/` folder adjacent to `_components/` and `_clients/` (e.g. `src/app/(home)/_data/`, `src/app/(pages)/blog/_data/`, `src/app/(pages)/projects/_data/`).
 - Shell/navigation data lives in `src/components/common/_data/navigation.js`.
 - Never dump all unrelated page datasets into a single unorganized file. Keep each domain's data colocated with its routes.
 - Every data file must have `// src/...` relative path comment on line 1.

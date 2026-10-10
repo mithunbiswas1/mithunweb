@@ -27,6 +27,20 @@ const nextConfig = {
   experimental: {
     scrollRestoration: true,
   },
+  async redirects() {
+    return [
+      {
+        source: "/cases",
+        destination: "/projects",
+        permanent: true,
+      },
+      {
+        source: "/cases/:slug",
+        destination: "/projects/:slug",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

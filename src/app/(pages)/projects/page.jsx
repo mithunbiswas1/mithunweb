@@ -3,7 +3,7 @@
 "use client";
 
 import { useState } from "react";
-import { PROJECTS } from "@/data/mithunweb-data";
+import { PROJECTS } from "./_data/projects-data";
 import ProjectCard from "@/components/shared/ProjectCard";
 import Button from "@/components/ui/Button";
 

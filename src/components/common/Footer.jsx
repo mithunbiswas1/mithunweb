@@ -94,10 +94,10 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 2: Cases */}
+          {/* Column 2: Projects */}
           <div className="lg:col-span-2">
             <h4 className="text-xs font-mono tracking-widest text-neutral-500 uppercase mb-6">
-              CASES
+              PROJECTS
             </h4>
             <ul className="space-y-3.5 text-sm font-light text-neutral-400">
               <li>
