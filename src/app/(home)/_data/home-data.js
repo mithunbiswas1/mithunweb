@@ -257,7 +257,7 @@ export const PROJECTS = [
 export const SERVICES = [
   {
     number: "01",
-    title: "Product Strategy",
+    title: "Product Strategy & Design",
     description: "We define product priorities, roadmap key features, and architect the path from MVP to market leader.",
     video: "https://framerusercontent.com/assets/pxVHhGW0K6amRwUEQeabZJQ93U.mp4",
   },
@@ -270,7 +270,7 @@ export const SERVICES = [
   {
     number: "03",
     title: "Software Development",
-    description: "We engineer scalable full-stack software, robust APIs, and cloud architectures built for speed and stability.",
+    description: "We engineer scalable full-stack software, APIs, and cloud architectures built for speed and stability.",
     video: "https://framerusercontent.com/assets/awNZsjrGSbJ4Apr0RyrWaQ8wLU.mp4",
   },
   {
@@ -281,13 +281,13 @@ export const SERVICES = [
   },
   {
     number: "05",
-    title: "App Development",
+    title: "Apps Development",
     description: "We design and develop high-performance cross-platform mobile and desktop apps with native fluid feel.",
     video: "https://framerusercontent.com/assets/fPJ3kuu119zPmxe3ZGMFKdgqeY.mp4",
   },
   {
     number: "06",
-    title: "Web Automation",
+    title: "AI & Web Automation",
     description: "We streamline complex business workflows, integrate AI agents, and build automated systems that scale.",
     video: "https://framerusercontent.com/assets/ZcZ1tmIyyqOiWgrsvI67MZYzb8.mp4",
   },
